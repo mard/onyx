@@ -1,0 +1,76 @@
+# Onyx for Rockbox: Sandisk Sansa c200
+# Custom statusbar
+
+# Fonts
+%Fl(2,06-Tiny.fnt)
+
+# Custom UI Viewport
+%Vi(-,0,11,-,-,1)
+
+# Battery state icon
+%V(0,0,131,9,1)
+%xl(B,battery-132x80x16.bmp,0,1,17)
+%t(1.0)%?bp<%?bc<%xd(Ba)|%xd(Bb)>|%?bl<|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)|%xd(Bp)|%xd(Bq)|%xd(Bq)|%xd(Bq)|%xd(Bq)|%xd(Bq)>>;%t(1.0)%?bp<%?bc<%Vd(h)|%xd(Bb)>|%?bl<|%Vd(h)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)|%xd(Bp)|%xd(Bq)|%xd(Bq)|%xd(Bq)|%xd(Bq)|%xd(Bq)>>
+
+# Battery remaining time (uncomment proceeding line if you want this to be showed)
+#%t(1.0)%?bp<%Vd(c)|%?bl<|%Vd(e)|%Vd(e)|%Vd(e)|%Vd(w)|%Vd(w)|%Vd(w)|%Vd(w)|%Vd(f)|%Vd(f)|%Vd(f)|%Vd(f)|%Vd(f)|%Vd(f)|%Vd(f)|%Vd(f)>>
+# Realtime clock (comment this if you want battery remaining time instead of this)
+%Vd(r)
+
+# Volume
+%xl(V,volume-132x80x16.bmp,111,1,21)
+
+# Comment proceeding line and uncomment the line below if you want to text volume to be showed when volume changes
+%?pv<%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)|%xd(Vl)|%xd(Vm)|%xd(Vn)|%xd(Vo)|%xd(Vp)|%xd(Vq)|%xd(Vr)|%xd(Vs)|%xd(Vt)|%xd(Vu)>
+#%?mv<%Vd(b)|%?pv<%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)|%xd(Vl)|%xd(Vm)|%xd(Vn)|%xd(Vo)|%xd(Vp)|%xd(Vq)|%xd(Vr)|%xd(Vs)|%xd(Vt)|%xd(Vu)>>
+
+# Lock icon
+%xl(L,lock2-132x80x16.bmp,50,2,2)
+%?mh<%xd(La)|%xd(Lb)>
+
+# Play mode icon
+%xl(P,playmode-132x80x16.bmp,62,2,7)
+%?mp<%xd(Pb)|%xd(Pa)|%xd(Pc)|%xd(Pd)|%xd(Pe)|%xd(Pf)|%xd(Pg)|%xd(Pa)|%xd(Pb)>
+
+# Shuffle icon
+%xl(S,shuffle-132x80x16.bmp,72,2,2)
+%?cs<%?ps<%xd(Sa)|%xd(Sb)>|%?ps<%xd(Sa)|%xd(Sb)>|||>
+
+# Repeat mode icon
+%xl(R,repeat-132x80x16.bmp,82,1,5)
+%?cs<%?mm<%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)|%xd(Re)>|%?mm<%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)|%xd(Re)>|||>
+
+# Tuned icon (instead of shuffle icon)
+%xl(T,tuned-132x80x16.bmp,72,1,2)
+%?cs<|||%?tt<%xd(Tb)|%xd(Ta)>|>
+
+# Mono/stereo icon (instead of repeat icon)
+%xl(M,monostereo-132x80x16.bmp,82,2,2)
+%?cs<|||%?ts<%xd(Mb)|%xd(Ma)>|>
+
+# Viewport grey (for realtime clock)
+%Vl(r,20,2,30,7,2)%Vf(AAAAAA)
+%al%?cf<%ck|%cl>:%cM%?cf<|%cp>
+
+# Viewport green (for battery state)
+%Vl(f,20,2,30,7,2)%Vf(00FF00)
+%al%?bp<%?bc<CHR|USB>|%bt>
+
+# Viewport yellow (for battery state)
+%Vl(w,20,2,30,7,2)%Vf(FFFF00)
+%al%?bp<%?bc<CHR|USB>|%bt>
+
+# Viewport red (for battery state)
+%Vl(e,20,2,30,7,2)%Vf(FF0000)
+%al%?bp<%?bc<CHR|USB>|%bt>
+
+# Viewport cyan (for battery state)
+%Vl(c,20,1,30,7,2)%Vf(00FFFF)
+%al%?bp<%?bc<CHR|USB>|%bt>
+
+# Viewport volume text
+%Vl(b,110,2,21,7,2)%Vf(AAAAAA)
+%ar%pvdB
+
+# dummy battery viewport
+%Vl(h,2,2,18,12,2)%Vf(00FFFF)

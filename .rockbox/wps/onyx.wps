@@ -1,0 +1,43 @@
+# Onyx for Rockbox: Sandisk Sansa c200
+# WPS
+
+# Fonts & backdrop
+%Fl(2,08-Rockfont.fnt)
+%X(wpsbackdrop-132x80x16.bmp)
+
+# Show progressbar
+%V(2,74,128,4,-)
+%pb(0,0,128,4,pb-132x80x16.bmp)
+
+# Album art init
+%V(1,11,42,42,-)
+%Cl(0,0,42,42,c,c)
+%?C<%Cd%Vd(a)|%Vd(b)>
+
+# Song info viewport (album art available)
+%Vl(a,44,13,-,42,2)
+%s%ac%?it<%it|%fn>
+%s%ac%ia
+%s%ac%id%?iy< %iy|>
+
+# Song info viewport (no album art available)
+%Vl(b,0,13,-,42,2)
+%s%ac%?it<%it|%fn>
+%s%ac%ia
+%s%ac%id%?iy< %iy|>
+
+# fast forward / rewind
+%V(1,56,25,7,2)%Vf(777777)%Vb(000000)
+%?mp<|||FFWD|REW||||>
+
+# Queue
+%V(1,64,65,8,2)%Vf(FFFFFF)%Vb(000000)
+%al%?lh<?/?|%pp/%pe>
+
+# Encoder and bitrate information
+%V(26,56,105,7,2)%Vf(777777)%Vb(000000)
+%ar%s%fc %fbkbps
+
+# Track duration
+%V(66,64,65,8,2)%Vf(FFFFFF)%Vb(000000)
+%ar%pc/%pt
